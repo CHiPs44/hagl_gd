@@ -1,0 +1,6 @@
+.vscode/
+hagl_hal.o
+example/hagl_font_test
+example/mandelbroot
+example/palette
+example/hagl.png
