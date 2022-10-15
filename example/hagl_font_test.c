@@ -39,6 +39,7 @@ SPDX-License-Identifier: MIT-0
 
 int main()
 {
+    color_t color0 = hagl_color(255, 255, 255);
     color_t color1 = hagl_color(128, 255, 255);
     color_t color2 = hagl_color(255, 128, 255);
     color_t color3 = hagl_color(255, 255, 128);
@@ -59,22 +60,22 @@ int main()
     x = (DISPLAY_WIDTH  / 2) - wcslen(text) * 8 / 2;
     y = (DISPLAY_HEIGHT / 2) - 13 * 4;
     hagl_draw_rectangle(x - 2, y - 2, x + wcslen(text) * 8 + 2, y + 13 + 2, color1);
-    hagl_put_text(text, x, y, color1, X11_fontx2_font8x13_fnt);
+    hagl_put_text(text, x, y, color0, X11_fontx2_font8x13_fnt);
 
     x = (DISPLAY_WIDTH  / 2) - wcslen(text) * 10 / 2;
     y = (DISPLAY_HEIGHT / 2) - 20 / 2;
     hagl_draw_rectangle(x - 2, y - 2, x + wcslen(text) * 10 + 2, y + 20 + 2, color2);
-    hagl_put_text(text, x, y, color2, X11_fontx2_font10x20_fnt);
+    hagl_put_text(text, x, y, color0, X11_fontx2_font10x20_fnt);
 
     x = (DISPLAY_WIDTH  / 2) - wcslen(text) * 8 / 2;
     y = (DISPLAY_HEIGHT / 2) + 8 * 4;
     hagl_draw_rectangle(x - 2, y - 2, x + wcslen(text) * 8 + 2, y + 8 + 2, color3);
-    hagl_put_text(text, x, y, color3, fontx_unscii_8_fantasy_fnt);
+    hagl_put_text(text, x, y, color0, fontx_unscii_8_fantasy_fnt);
 
+    printf("%dx%dx%d\n", DISPLAY_WIDTH, DISPLAY_HEIGHT, DISPLAY_DEPTH);
     end = clock();
     time_spent = (double)(end - start) / CLOCKS_PER_SEC;
     bytes = hagl_flush();
-    printf("%dx%dx%d\n", DISPLAY_WIDTH, DISPLAY_HEIGHT, DISPLAY_DEPTH);
     printf("\nGenerated %zu bytes in %g seconds.\n\n", bytes, time_spent);
     hagl_close();
 
