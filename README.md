@@ -7,11 +7,19 @@ This is a [GD](https://libgd.github.io/) HAL for the lightweight hardware agnost
 ## Demo
 
 ```
+<<<<<<< HEAD
 git clone git@github.com:tuupola/hagl.git
 git clone git@github.com:tuupola/hagl_gd.git
 cd hagl_gd/example
 make clean && make mandelbroot && ./mandelbroot && open hagl.png
 make clean && make palette && ./palette && open hagl.png
+=======
+$ git clone git@github.com:tuupola/hagl.git
+$ git clone git@github.com:tuupola/hagl_gd.git
+$ cd hagl_gd/example
+$ make clean && make mandelbroot && ./mandelbroot && feh hagl.png
+$ make clean && make palette && ./palette && feh hagl.png
+>>>>>>> a8d9f46 (Change instructions to use feh)
 ```
 
 ## License
